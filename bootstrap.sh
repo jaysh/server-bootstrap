@@ -36,6 +36,9 @@ then
         pkill -f puppet
         puppet master
 
+	echo "Done! Master is now running"
+	pgrep -lf puppet
+
 elif [ "$type" == "agent" ];
 then
 
