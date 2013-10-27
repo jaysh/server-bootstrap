@@ -38,7 +38,8 @@ applies the same configuration to every puppet node.
 ## Usage
 
 	mkdir -p /srv/git/checkouts
-        yum -y install git
+	cd /srv/git/checkouts
+	yum -y install git
 	git clone https://github.com/jaysh/server-bootstrap.git
 	cd server-bootstrap
 	./bootstrap.sh master
