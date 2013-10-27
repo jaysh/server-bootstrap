@@ -1,3 +1,3 @@
-node /\.jay\.sh$/ {
+node 'default' {
   include jayshah
 }

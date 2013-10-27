@@ -13,6 +13,15 @@ Everything required to run this is available on GitHub. It will:
 - In the case of the master, copy over `/etc/puppet`.
 - In the case of the agent, proceed to setup the node via puppet.
 
+## Why?
+
+Because I like to experiment a lot with different deploying configurations to
+different providers (e.g. Dcker, Vagrant, OpenVZ, SoftLayer, AWS, DigitalOcean)
+and it isn't always practical to find a base image that comes with puppet, or
+find support for provisioning scripts.
+
+I also love automating things.
+
 ## Requirements
 
 - Every node will have an entry in your DNS setup. This includes one for `puppet`.
@@ -23,13 +32,13 @@ Everything required to run this is available on GitHub. It will:
 
 - The system that `bootstrap.sh` is invoked on is either bare (with functioning
 `yum`), or is a system that has been previously configured by `server-bootstrap`.
-- Your `hostname` will contain `jay.sh`. This module does *not* configure `site.pp`
-based on value of `$DOMAIN` (previous point), so please change that if this doesn't
-suit you.
+- You will configure `site.pp` accordingly. For demonstration purposes, it
+applies the same configuration to every puppet node.
 
 ## Usage
 
 	mkdir -p /srv/git/checkouts
+        yum -y install git
 	git clone https://github.com/jaysh/server-bootstrap.git
 	cd server-bootstrap
 	./bootstrap.sh master
