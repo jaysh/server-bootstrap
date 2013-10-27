@@ -1,0 +1,32 @@
+{
+  "name": "example42-sudo",
+  "version": "2.0.9",
+  "source": "https://github.com/example42/puppet-sudo",
+  "author": "Alessandro Franceschi",
+  "license": "Apache2",
+  "summary": "Puppet module for sudo",
+  "description": "This module installs and manages sudo",
+  "project_page": "http://www.example42.com",
+  "dependencies": [
+    {
+      "name": "example42/puppi",
+      "version_requirement": ">=2.0.0"
+    },
+    {
+      "name": "ripienaar/concat",
+      "version_requirement": ">=0.0.1"
+    }
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "Modulefile": "be53382e5434baa5cd9e6be0ef975a1b",
+    "README.md": "e1648866c1034dc013cb47552920293d",
+    "Rakefile": "e90d68823ff237c89224eb139f8926ad",
+    "manifests/directive.pp": "0005cd5b89be8f95bba220170b6e975a",
+    "manifests/init.pp": "654c33c6a7554c7e04ffee5ca15b4244",
+    "manifests/params.pp": "a070d1b586317e8b02babfda033cc5ed",
+    "templates/sudoers_head.erb": "fd9d2ec7cb13c8ffd656770c023430bf"
+  }
+}

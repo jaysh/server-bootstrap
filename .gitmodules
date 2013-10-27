@@ -1,0 +1,3 @@
+[submodule "etc/puppet/modules/jayshah"]
+	path = etc/puppet/modules/jayshah
+	url = https://github.com/jaysh/puppet-jayshah.git
