@@ -11,6 +11,15 @@ DOMAIN="jay.sh"
 
 type=$1
 
+if [ "$type" != "master" ] && [ "$type" != "agent" ];
+then
+	echo "Usage: $0 <master|agent>"
+	echo
+	echo "Setup this server $(hostname) as a puppet master or agent. To do both, run"
+        echo "this script twice, first with 'master', then with 'agent'."
+	exit 1
+fi
+
 rpm -q puppetlabs-release &> /dev/null || rpm -ivh http://yum.puppetlabs.com/el/6/products/i386/puppetlabs-release-6-7.noarch.rpm
 grep $DOMAIN /etc/resolv.conf &> /dev/null || echo "search $DOMAIN" >> /etc/resolv.conf
 
@@ -32,13 +41,4 @@ then
 
 	rpm -q puppet &> /dev/null || yum -y install puppet
 	puppet agent --test
-
-else
-
-	echo "Usage: $0 <master|agent>"
-	echo
-	echo "Setup this server $(hostname) as a puppet master or agent. To do both, run"
-        echo "this script twice, first with 'master', then with 'agent'."
-	exit 1
-
 fi
